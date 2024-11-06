@@ -15,11 +15,11 @@ logger = logging.getLogger(__name__)
 DATA_FILE = "annoucements.json"
 
 # ID групп для рассылки
-GROUP_LOST = '-1002422080949'  # Замените на ID группы для потерянных животных
-GROUP_FOUND = '-1002344810777'  # Замените на ID группы для найденных животных
+GROUP_LOST = 'lost group id'  # Замените на ID группы для потерянных животных
+GROUP_FOUND = 'found group id'  # Замените на ID группы для найденных животных
 
 # Список никнеймов модераторов
-MODERATOR_USERNAMES = ['mratoman']  # Замените на никнеймы ваших модераторов
+MODERATOR_USERNAMES = ['moderator username 1', 'moderator username 2']  # добавьте никнеймы модераторов по образцу без @
 
 # Загрузка существующих данных из файла
 def load_data():
@@ -155,7 +155,7 @@ async def approve_message(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     await update.message.reply_text(f"Сообщение с ID {message_id} не найдено или уже одобрено.")
 
 def main():
-    token = '7628883106:AAEKohcrXgnecZhvktx4TFcYFeZdM-BfoZg'  # Замените на ваш токен
+    token = 'bot token'  # токен бота в телеграмме
     application = ApplicationBuilder().token(token).build()
 
     application.add_handler(CommandHandler("start", start))
